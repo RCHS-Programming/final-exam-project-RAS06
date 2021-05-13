@@ -12,7 +12,7 @@ public class catchArrow extends Actor
     /**
     * 
     */
-    public void catchArrow(int turnValue) {
+    public catchArrow(int turnValue) {
         turn = turnValue;
         turn(turn);
      }

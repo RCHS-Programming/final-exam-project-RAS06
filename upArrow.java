@@ -9,10 +9,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class upArrow extends Actor
 {
     String arrows;
-    String arrowImages;
-    public upArrow(String arrowDirection, String setArrowImages) {
-        arrows = setArrowImages;
-        arrowImages = arrowDirection;
+    String arrowImgs;
+    int score = 0;
+    public upArrow(String arrowDirection, String arrowImages) {
+        arrows = arrowDirection;
+        arrowImgs = arrowImages;
+        setImage(arrowImgs);
     }
     /**
      * Act - do whatever the upArrow wants to do. This method is called whenever
@@ -25,12 +27,13 @@ public class upArrow extends Actor
     }    
     public void testCatch (){
         if(Greenfoot.isKeyDown(arrows)) {
-            getWorld().removeObject(this);
-            
             if(getY() > 95 && getY() < 105) {
-                
+              getWorld().removeObject(this);
+              score = score + 5;
+             
             }
         }
     }
-}
+    }
+
 

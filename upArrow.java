@@ -17,19 +17,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
     int arrowNumber = 5;
     int timerInterval = 0;
     
-    public boolean upPressed;
-    public boolean downPressed;
-    public boolean rightPressed;
-    public boolean leftPressed;
+    public boolean arrowPressed;
     public upArrow(String arrowDirection, String arrowImages) {
         arrows = arrowDirection;
         arrowImgs = arrowImages;
         setImage(arrowImgs);
         
-        upPressed = false;
-        downPressed = false;
-        rightPressed = false;
-        leftPressed = false; 
+        arrowPressed = false;
     }
     /**
      * Act - do whatever the upArrow wants to do. This method is called whenever
@@ -40,15 +34,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
         setLocation(getX(), getY() - 5);
         testCatch();
         spawnNew();
-        destroyOld();
     }    
     public void testCatch (){
-        if(Greenfoot.isKeyDown(arrows)) {
-            if(getY() > 95 && getY() < 105) {
+        if(Greenfoot.isKeyDown(arrows) && arrowPressed == false) {
+            arrowPressed = true;
+        }
+        if(getY() > 95 && getY() < 105 && arrowPressed) {
               getWorld().removeObject(this);
               score = score + 5;
-             
-            }
+              arrowPressed = false;
+              
+              getWorld().addObject(new upArrow(directionOfArrow[3], imageOfArrow[3]), 125 * 3, 590);
+         }
+        if(arrowPressed && !!Greenfoot.isKeyDown(arrows)){
+             arrowPressed = false;
+        }
+        if(getY() < 20) {
+            destroyOld();
         }
     }
     
@@ -58,7 +60,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
              arrowNumber = Greenfoot.getRandomNumber(4);
              timerInterval = 0;
             }
-           if(arrowNumber == 0) {
+          if(arrowNumber == 0) {
             getWorld().addObject(new upArrow(directionOfArrow[0], imageOfArrow[0]), 125, 590);
             arrowNumber = 5;
             timerInterval = 0;
@@ -81,9 +83,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
     }
     
     public void destroyOld() {
-        if(getY() < 20) {
-          getWorld().removeObject(this);
-        }
+    
+       getWorld().removeObject(this);
+        
     }
     }
 

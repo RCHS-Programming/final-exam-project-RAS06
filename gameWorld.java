@@ -27,8 +27,8 @@ public class gameWorld extends World
         for(int i = 1; i < 5; i++) {
             addObject(new catchArrow(i * 90), 125 * i, 100);
         }
-        for (int i = 0; i < 4; i++) {
-            //addObject(new upArrow(directionOfArrow[i], imageOfArrow[i]), (i+1) * 125, 590);
+        for (int i = 0; i < 12; i++) {
+            addObject(new damageArrowCatch(), 50 * i + 25, 50); 
         }
         
         

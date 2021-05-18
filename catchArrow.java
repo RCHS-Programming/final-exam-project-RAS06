@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class catchArrow extends Actor
 {
     int turn;
+    int gameTimer;
     /**
     * 
     */
@@ -22,7 +23,16 @@ public class catchArrow extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        iAmLiterallyOutsourcingYourJobsToAnotherClassBecauseYouKeepInterfereing();
     }   
-    
+    public void iAmLiterallyOutsourcingYourJobsToAnotherClassBecauseYouKeepInterfereing() {
+        gameTimer++;
+        //System.out.println(gameTimer);
+        getWorld().showText("Time Survived:" + gameTimer/25, 80, 20);
+        
+        
+        if(gameTimer / 25 >= 90) {
+         Greenfoot.setWorld(new winWorld());    
+        }
+    }
 }

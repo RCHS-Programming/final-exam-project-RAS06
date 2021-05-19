@@ -16,6 +16,7 @@ public class winSignV2 extends Actor
     {
         if(Greenfoot.isKeyDown("t")){
             Greenfoot.setWorld(new gameWorld());
+            Greenfoot.playSound("bensoundDainty-HippieMusic.mp3");
         }
     }    
 }

@@ -106,7 +106,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
         if(Greenfoot.isKeyDown(arrows) && arrowPressed == false) {
             arrowPressed = true;
         }
-        if(getY() > 95 && getY() < 105 && arrowPressed) {
+        if(getY() > 90 && getY() < 105 && arrowPressed) {
               setImage(imageOfArrow[4]);
               addPoint = true;
               arrowPressed = false;

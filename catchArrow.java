@@ -28,10 +28,10 @@ public class catchArrow extends Actor
     public void iAmLiterallyOutsourcingYourJobsToAnotherClassBecauseYouKeepInterfereing() {
         gameTimer++;
         //System.out.println(gameTimer);
-        getWorld().showText("Time Survived:" + gameTimer/25, 80, 20);
+        getWorld().showText("Time Survived:" + gameTimer/65, 80, 20);
         
         
-        if(gameTimer / 25 >= 90) {
+        if(gameTimer / 65 >= 105) {
          Greenfoot.setWorld(new winWorld());    
         }
     }

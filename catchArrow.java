@@ -31,7 +31,7 @@ public class catchArrow extends Actor
         getWorld().showText("Time Survived:" + gameTimer/65, 80, 20);
         
         
-        if(gameTimer / 65 >= 105) {
+        if(gameTimer / 65 >= 65) {
          Greenfoot.setWorld(new winWorld());    
         }
     }

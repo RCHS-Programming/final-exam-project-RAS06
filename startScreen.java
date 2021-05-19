@@ -25,7 +25,7 @@ public class startScreen extends World
         showText("with the catcher-arrow. Be sure you don't miss any arrows!", 300, 275);
         showText("You get a random number of lives (for extra unease), and you", 300, 300);
         showText("lose one whenever an arrow gets passed the catchers. The goal", 300, 325);
-        showText("is to survive for about 105 seconds (or about as close I", 300, 350);
+        showText("is to survive for about 65 seconds (or about as close I", 300, 350);
         showText("(could get, seeing as I didn't know the frame rate). Good luck,", 300, 375);
         showText("and happy rip-off games!", 300, 400);
         showText("Type \"Yeet\" to start!", 300, 500);

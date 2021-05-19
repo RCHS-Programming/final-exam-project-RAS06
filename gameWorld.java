@@ -23,6 +23,8 @@ public class gameWorld extends World
         super(600, 600, 1); 
         
         addObject(new winSign(), 310, 300);
+        addObject(new obscureDecorative(), 300, 400);
+        addObject(new obscureDecorative(), 300, 240);
         
         for(int i = 1; i < 5; i++) {
             addObject(new catchArrow(i * 90), 125 * i, 100);
